@@ -4,6 +4,7 @@ from functools import wraps
 
 def cache(func: Callable) -> Callable:
     deco_cache = {}
+
     @wraps(func)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         key = tuple(args) + tuple(kwargs.items())
